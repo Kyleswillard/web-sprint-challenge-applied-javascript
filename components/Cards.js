@@ -16,6 +16,9 @@
 
 
 const cards = document.querySelector(".cards-container")
+
+
+
 axios
   .get("https://lambda-times-api.herokuapp.com/articles")
   .then(res => {
@@ -66,6 +69,10 @@ const cardMaker = (e) => {
   author.appendChild(imgCont)
   imgCont.appendChild(img)
   author.appendChild(name)
+
+  cardDiv.addEventListener('click', () => {
+    console.log(e.headline)
+  })
 
   return cards
 }
